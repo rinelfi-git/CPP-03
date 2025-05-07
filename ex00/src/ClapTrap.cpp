@@ -1,0 +1,66 @@
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <cmath>
+
+ClapTrap::ClapTrap(void): _name(""), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+{
+	std::cout << "ClapTrap default constructor" << std::endl;
+}
+
+ClapTrap::ClapTrap(const std::string& name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+{
+	std::cout << "ClapTrap with argument constructor (" << name << ")" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& ref)
+{
+	std::cout << "ClapTrap copy constructor from (" << &ref << ")" << std::endl;
+	*this = ref;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap " << _name << " destructor" << std::endl;
+}
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
+{
+	if (this != &ref)
+	{
+		std::cout << "ClapTrap copy assignement from (" << &ref << ")" << std::endl;
+		_name = ref._name;
+		_hitPoint = ref._hitPoint;
+		_energyPoint = ref._energyPoint;
+		_attackDamage = ref._attackDamage;
+	}
+	return *this;
+}
+
+void		ClapTrap::attackDamage(int attackDamage)
+{
+	_attackDamage = attackDamage;
+}
+
+void		ClapTrap::attack(const std::string& target)
+{
+	if (_hitPoint <= 0)
+		std::cout << "ClapTrap " << _name << " doesn't have any _hitPoint to attack " << target << std::endl;
+	else if (_energyPoint)
+		std::cout << "ClapTrap " << _name << " doesn't have any _energyPoint to attack " << target << std::endl;
+	else
+	{
+		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+		_hitPoint = (int)fmax(0, _hitPoint - 1);
+		_energyPoint = (int)fmax(0, _energyPoint - 1);
+	}
+}
+
+void		ClapTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "ClapTrap " << _name << " is taking " << amount << " amount of damage" << std::endl;
+}
+
+void		ClapTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "ClapTrap " << _name << " is getting repaired with amount of " << amount << std::endl;
+}
