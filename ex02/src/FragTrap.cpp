@@ -46,5 +46,10 @@ FragTrap::~FragTrap()
 
 void		FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << _name << " want a high five (or one hand clapping)" << std::endl;
+	if (_hitPoint <= 0)
+		std::cout << "FragTrap " << _name << " doesn't have any _hitPoint to ask for a high five" << std::endl;
+	else if (_energyPoint <= 0)
+		std::cout << "FragTrap " << _name << " doesn't have any _energyPoint to ask for a high five" << std::endl;
+	else
+		std::cout << "FragTrap " << _name << " want a high five (or one hand clapping)" << std::endl;
 }
