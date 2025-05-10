@@ -1,9 +1,9 @@
-NAME = claptrap
+NAME = scavtrap
 CPPC = c++
 CPPARG = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = src
 OBJ_DIR = object
-SRCs = main.cpp ClapTrap.cpp
+SRCs = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRCs:.cpp=.o))
 SRC_PATH = $(addprefix $(SRC_DIR)/,$(SRCs))
 INCLUDE_PATH = -Iheader
