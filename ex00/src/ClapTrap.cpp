@@ -66,8 +66,6 @@ void		ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoint <= 0)
 		std::cout << "ClapTrap " << _name << " doesn't have enough _hitPoint to take damages"<< std::endl;
-	else if (_energyPoint <= 0)
-		std::cout << "ClapTrap " << _name << " doesn't have enough _energyPoint to take damages"<< std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << _name << " is taking " << amount << " amount of damage" << std::endl;
