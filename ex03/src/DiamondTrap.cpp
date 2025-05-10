@@ -37,7 +37,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& ref)
 	if (this != &ref)
 	{
 		std::cout << "DiamondTrap copy assignement ["<< ref._name <<" <=> " << ref.name() << "]" << std::endl;
-		this->name(ref._name);
+		this->name(ref.name());
 		_name = ref._name;
 		_hitPoint = ref._hitPoint;
 		_energyPoint = ref._energyPoint;
