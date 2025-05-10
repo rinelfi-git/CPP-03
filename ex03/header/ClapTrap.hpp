@@ -22,6 +22,7 @@ class ClapTrap
 		int			hitPoint(void) const;
 		int			energyPoint(void) const;
 		const std::string&	name(void) const;
+		void		name(const std::string& name);
 
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);

@@ -54,6 +54,11 @@ const std::string&	ClapTrap::name(void) const
 	return _name;
 }
 
+void	ClapTrap::name(const std::string& name)
+{
+	_name = name;
+}
+
 int	ClapTrap::hitPoint(void) const
 {
 	return _hitPoint;

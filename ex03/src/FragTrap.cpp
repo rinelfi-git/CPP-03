@@ -1,6 +1,10 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
+const int FragTrap::HP = 100;
+const int FragTrap::EP = 100;
+const int FragTrap::AD = 30;
+
 FragTrap::FragTrap(void): ClapTrap()
 {
 	_hitPoint = 100;
@@ -42,6 +46,21 @@ FragTrap&	FragTrap::operator=(const FragTrap& ref)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << _name << " destructor" << std::endl;
+}
+
+int			FragTrap::hitPoint(void) const
+{
+	return _hitPoint;
+}
+
+int			FragTrap::energyPoint(void) const
+{
+	return _energyPoint;
+}
+
+int			FragTrap::attackDamage(void) const
+{
+	return _attackDamage;
 }
 
 void		FragTrap::highFivesGuys(void)

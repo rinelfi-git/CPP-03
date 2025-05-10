@@ -1,6 +1,10 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
+const int ScavTrap::HP = 100;
+const int ScavTrap::EP = 50;
+const int ScavTrap::AD = 20;
+
 ScavTrap::ScavTrap(void): ClapTrap()
 {
 	_hitPoint = 100;
@@ -58,6 +62,21 @@ void		ScavTrap::attack(const std::string& target)
 			_energyPoint = 0;
 	}
 	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
+}
+
+int			ScavTrap::hitPoint(void) const
+{
+	return _hitPoint;
+}
+
+int			ScavTrap::energyPoint(void) const
+{
+	return _energyPoint;
+}
+
+int			ScavTrap::attackDamage(void) const
+{
+	return _attackDamage;
 }
 
 void		ScavTrap::guardGate(void)

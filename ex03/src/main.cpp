@@ -9,9 +9,7 @@ int	main(void)
 	FragTrap karen("karen");
 	ScavTrap kyle("KYLE");
 	DiamondTrap diamond("Saphire");
-	DiamondTrap fake(diamond);
-
-	fake = fake;
+	DiamondTrap fake = diamond;
 
 	john.attackDamage(10);
 	john.attack("karen");
