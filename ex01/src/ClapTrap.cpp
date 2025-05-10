@@ -5,17 +5,20 @@
 ClapTrap::ClapTrap(void): _name(""), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap default constructor" << std::endl;
+	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap with argument constructor (" << name << ")" << std::endl;
+	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& ref)
 {
-	std::cout << "ClapTrap copy constructor from (" << &ref << ")" << std::endl;
+	std::cout << "ClapTrap copy constructor from (" << &ref << ") [" << ref._name << "]" << std::endl;
 	*this = ref;
+	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -27,7 +30,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
 {
 	if (this != &ref)
 	{
-		std::cout << "ClapTrap copy assignement from (" << &ref << ")" << std::endl;
+		std::cout << "ClapTrap copy assignement from (" << &ref << ") [" << ref._name << "]" << std::endl;
 		_name = ref._name;
 		_hitPoint = ref._hitPoint;
 		_energyPoint = ref._energyPoint;
@@ -86,6 +89,9 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << _name << " is getting repaired with amount of " << amount << std::endl;
 		_hitPoint += amount;
+		_energyPoint--;
+		if (_energyPoint < 0)
+			_energyPoint = 0;
 	}
 	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }

@@ -8,7 +8,7 @@ int	main(void)
 
 	john.attackDamage(10);
 	john.attack("karen");
-	karen.takeDamage(2);
+	karen.takeDamage(20);
 	karen.guardGate();
 	return (0);
 }
