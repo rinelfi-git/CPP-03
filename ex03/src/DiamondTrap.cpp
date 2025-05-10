@@ -2,9 +2,8 @@
 #include <iostream>
 #include <cmath>
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void): _name("unnamed_diamond")
 {
-	_name = "unnamed_diamond";
 	_hitPoint = FragTrap::HP;
 	_energyPoint = ScavTrap::EP;
 	_attackDamage = FragTrap::AD;
