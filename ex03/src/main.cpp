@@ -1,14 +1,17 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
 	ClapTrap john("David Jones");
 	FragTrap karen("karen");
-	ScavTrap _kyle("KYLE");
-	ScavTrap kyle(_kyle);
-	FragTrap fragCopy(karen);
+	ScavTrap kyle("KYLE");
+	DiamondTrap diamond("Saphire");
+	DiamondTrap fake(diamond);
+
+	fake = fake;
 
 	john.attackDamage(10);
 	john.attack("karen");
@@ -17,5 +20,12 @@ int	main(void)
 	kyle.takeDamage(50);
 	karen.highFivesGuys();
 	kyle.beRepaired(40);
+	diamond.whoAmI();
+	diamond.highFivesGuys();
+	diamond.guardGate();
+	diamond.takeDamage(60);
+	diamond.attack("john");
+	diamond.attack("karen");
+	fake.whoAmI();
 	return (0);
 }

@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(const std::string& name): ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& ref): ClapTrap(ref)
 {
-	std::cout << "ScavTrap copy constructor from (" << &ref << ") [" << ref._name << "]" << std::endl;
+	std::cout << "ScavTrap copy constructor [" << ref._name << "]" << std::endl;
 	*this = ref;
 	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }
@@ -30,7 +30,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& ref)
 {
 	if (this != &ref)
 	{
-		std::cout << "ScavTrap copy assignement from (" << &ref << ") [" << ref._name << "]" << std::endl;
+		std::cout << "ScavTrap copy assignement [" << ref._name << "]" << std::endl;
 		_name = ref._name;
 		_hitPoint = ref._hitPoint;
 		_energyPoint = ref._energyPoint;

@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(const std::string& name): _name(name), _hitPoint(10), _energy
 
 ClapTrap::ClapTrap(const ClapTrap& ref)
 {
-	std::cout << "ClapTrap copy constructor from (" << &ref << ") [" << ref._name << "]" << std::endl;
+	std::cout << "ClapTrap copy constructor [" << ref._name << "]" << std::endl;
 	*this = ref;
 	std::cout << "[HP] => " << _hitPoint << "; [EP] => " << _energyPoint << "; [AD] => " << _attackDamage << std::endl;
 }
@@ -30,7 +30,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& ref)
 {
 	if (this != &ref)
 	{
-		std::cout << "ClapTrap copy assignement from (" << &ref << ") [" << ref._name << "]" << std::endl;
+		std::cout << "ClapTrap copy assignement [" << ref._name << "]" << std::endl;
 		_name = ref._name;
 		_hitPoint = ref._hitPoint;
 		_energyPoint = ref._energyPoint;

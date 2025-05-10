@@ -49,6 +49,21 @@ int		ClapTrap::attackDamage(void) const
 	return _attackDamage;
 }
 
+const std::string&	ClapTrap::name(void) const
+{
+	return _name;
+}
+
+int	ClapTrap::hitPoint(void) const
+{
+	return _hitPoint;
+}
+
+int	ClapTrap::energyPoint(void) const
+{
+	return _energyPoint;
+}
+
 void		ClapTrap::attack(const std::string& target)
 {
 	if (_hitPoint <= 0)
