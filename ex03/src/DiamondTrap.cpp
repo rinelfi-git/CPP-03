@@ -54,5 +54,10 @@ void		DiamondTrap::attack(const std::string& target)
 
 void		DiamondTrap::whoAmI(void)
 {
-	std::cout << "DiamondTrap " << _name << " is wondering who is he. As a ClapTrap his name is " << this->name() << std::endl;
+	if (_hitPoint <= 0)
+		std::cout << "DiamondTrap " << _name << " doesn't have any _hitPoint to wonder about anything" << std::endl;
+	else if (_energyPoint <= 0)
+		std::cout << "DiamondTrap " << _name << " doesn't have any _energyPoint to wonder about anything" << std::endl;
+	else
+		std::cout << "DiamondTrap " << _name << " is wondering who is he. As a ClapTrap his name is " << this->name() << std::endl;
 }
